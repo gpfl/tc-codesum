@@ -2,8 +2,8 @@
 
 This repository provides the code necessary to 
 reproduce the results found in the paper
-["Análise Experimental de Abordagens para Sumarização de Código Fonte"](https://github.com/gpfl/tc-codesum/tree/master/files/pdf/Flores_G_Analise_Experimental.pdf).
-
+["Análise Experimental de Abordagens para Sumarização de Código Fonte"](https://github.com/gpfl/tc-codesum/tree/master/files/pdf/Flores_G_Analise_Experimental.pdf)
+(Experimental Analysis of Code Summarization Approaches).
 <p align="center">
   <img src="https://github.com/gpfl/tc-codesum/blob/master/files/img/tc-codesum.png?raw=true" width="500" alt="Code Summarization Example"/>
 </p>
