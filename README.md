@@ -2,13 +2,14 @@
 
 This repository provides the code necessary to 
 reproduce the results found in the paper
-["Análise Experimental de Abordagens para Sumarização de Código Fonte"](https://github.com/gpfl/tc-codesum/tree/master/pdf/Flores_G_Analise_Experimental.pdf).
+["Análise Experimental de Abordagens para Sumarização de Código Fonte"](https://github.com/gpfl/tc-codesum/tree/master/files/pdf/Flores_G_Analise_Experimental.pdf).
+
+![](https://github.com/gpfl/tc-codesum/tree/master/files/img/tc-codesum.png "Code Summarization Example")
 
 ### Table of Contents
 * [Data](https://github.com/gpfl/tc-codesum#Data)
-* [RNN](https://github.com/gpfl/tc-codesum#RNN)
-* [NeuralCodeSum](https://github.com/gpfl/tc-codesum#NeuralCodeSum)
 * [CodeBERT](https://github.com/gpfl/tc-codesum#CodeBERT)
+* [NeuralCodeSum](https://github.com/gpfl/tc-codesum#NeuralCodeSum)
 
 # Data
 
@@ -98,9 +99,29 @@ which can be downloaded [here](https://drive.google.com/file/d/1pH51Ttn440keobIv
 
 # NeuralCodeSum
 
+### Preparation
+    # Clone the repository
+    git clone --depth 1 https://github.com/wasiahmad/NeuralCodeSum.git
 
-# RNN
+    # Install requirements
+    cd NeuralCodeSum
+    pip install -r requirements.txt
+    python setup.py develop
 
+    # Copy data files
+    bash copy_data.sh
 
+    # Copy files that we modified to run the models 
+    bash copy_modified.sh
+
+### Training, Testing & Beam Search for NeuralCodeSum
+    cd NeuralCodeSum/scripts/java
+    bash transformer.sh 0 code2jdoc
+
+### Training, Testing & Beam Search for RNN
+    cd NeuralCodeSum/scripts/java
+    bash rnn.sh 0 rnn
+
+    
 
 
