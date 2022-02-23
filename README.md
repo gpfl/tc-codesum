@@ -4,12 +4,21 @@ This repository provides the code necessary to
 reproduce the results found in the paper
 ["Análise Experimental de Abordagens para Sumarização de Código Fonte"](https://github.com/gpfl/tc-codesum/tree/master/files/pdf/Flores_G_Analise_Experimental.pdf).
 
-![](https://github.com/gpfl/tc-codesum/tree/master/files/img/tc-codesum.png "Code Summarization Example")
+<p align="center">
+  <img src="https://github.com/gpfl/tc-codesum/blob/master/files/img/tc-codesum.png?raw=true" width="500" alt="Code Summarization Example"/>
+</p>
 
 ### Table of Contents
 * [Data](https://github.com/gpfl/tc-codesum#Data)
 * [CodeBERT](https://github.com/gpfl/tc-codesum#CodeBERT)
+  * [Preparation](https://github.com/gpfl/tc-codesum#preparation)
+  * [Training & Eval](https://github.com/gpfl/tc-codesum#training--eval)
+  * [Testing](https://github.com/gpfl/tc-codesum#testing)
 * [NeuralCodeSum](https://github.com/gpfl/tc-codesum#NeuralCodeSum)
+  * [Preparation](https://github.com/gpfl/tc-codesum#preparation-1)
+  * [Training, Testing & Beam Search](https://github.com/gpfl/tc-codesum#training-testing--beam-search)
+  * * [NeuralCodeSum](https://github.com/gpfl/tc-codesum#NeuralCodeSum-1)
+    * [RNN](https://github.com/gpfl/tc-codesum#rnn)
 
 # Data
 
@@ -114,11 +123,13 @@ which can be downloaded [here](https://drive.google.com/file/d/1pH51Ttn440keobIv
     # Copy files that we modified to run the models 
     bash copy_modified.sh
 
-### Training, Testing & Beam Search for NeuralCodeSum
+### Training, Testing & Beam Search
+
+### NeuralCodeSum
     cd NeuralCodeSum/scripts/java
     bash transformer.sh 0 code2jdoc
 
-### Training, Testing & Beam Search for RNN
+### RNN
     cd NeuralCodeSum/scripts/java
     bash rnn.sh 0 rnn
 
