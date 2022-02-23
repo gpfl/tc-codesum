@@ -26,8 +26,81 @@ which can be downloaded [here](https://drive.google.com/file/d/1pH51Ttn440keobIv
     unzip codesummarization.zip -d data/
     rm codesummarization.zip
 
-# RNN
+# CodeBERT
+### Preparation
+    # Requirements
+    pip install torch==1.4.0
+    pip install transformers==2.5.0
+    pip install filelock
+
+    # Clone CodeBERT repo
+    git clone --depth 1 https://github.com/guoday/CodeBERT.git
+
+### Training & Eval
+    cd CodeBERT/CodeBERT/code2nl
+
+    lang="java" 
+    lr=5e-5
+    batch_size=16
+    beam_size=2
+    source_length=256
+    target_length=128
+    data_dir=$(pwd)
+    output_dir=$data_dir/CodeBERT/CodeBERT/code2nl/model
+    train_file=$data_dir/data/codesummarization_data/train_small/train_small.jsonl
+    dev_file=$data_dir/data/codesummarization_data/dev/dev.jsonl
+    eval_steps=10 
+    train_steps=10 
+    pretrained_model=microsoft/codebert-base 
+
+    python run.py --do_train --do_eval \
+    --model_type roberta \
+    --model_name_or_path $pretrained_model \
+    --train_filename $train_file \
+    --dev_filename $dev_file \
+    --output_dir $output_dir \
+    --max_source_length $source_length \
+    --max_target_length $target_length \
+    --beam_size $beam_size \
+    --train_batch_size $batch_size \
+    --eval_batch_size $batch_size \
+    --learning_rate $lr \
+    --train_steps $train_steps \
+    --eval_steps $eval_steps
+
+### Testing
+    cd CodeBERT/CodeBERT/code2nl
+
+    lang="java" 
+    beam_size=5
+    batch_size=32
+    source_length=256
+    target_length=128
+    data_dir=$(pwd)
+    eval_steps=10
+    output_dir=$data_dir/CodeBERT/CodeBERT/code2nl/model
+    dev_file=$data_dir/codesummarization_data/dev/dev.jsonl
+    test_file=$data_dir/codesummarization_data/test/test.jsonl
+    test_model=$data_dir/CodeBERT/CodeBERT/code2nl/model/pytorch_model.bin
+    
+    python run.py --do_eval --do_test \
+    --model_type roberta \
+    --model_name_or_path microsoft/codebert-base \
+    --load_model_path $test_model \
+    --dev_filename $dev_file \
+    --test_filename $test_file \
+    --output_dir $output_dir \
+    --max_source_length $source_length \
+    --max_target_length $target_length \
+    --beam_size $beam_size \
+    --eval_batch_size $batch_size \
+    --eval_steps $eval_steps
 
 # NeuralCodeSum
 
-# CodeBERT
+
+# RNN
+
+
+
+
