@@ -17,7 +17,7 @@ reproduce the results found in the paper
 * [NeuralCodeSum](https://github.com/gpfl/tc-codesum#NeuralCodeSum)
   * [Preparation](https://github.com/gpfl/tc-codesum#preparation-1)
   * [Training, Testing & Beam Search](https://github.com/gpfl/tc-codesum#training-testing--beam-search)
-  * * [NeuralCodeSum](https://github.com/gpfl/tc-codesum#NeuralCodeSum-1)
+    * [NeuralCodeSum](https://github.com/gpfl/tc-codesum#NeuralCodeSum-1)
     * [RNN](https://github.com/gpfl/tc-codesum#rnn)
 
 # Data
