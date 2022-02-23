@@ -87,13 +87,12 @@ which can be downloaded [here](https://drive.google.com/file/d/1pH51Ttn440keobIv
     source_length=256
     target_length=128
     data_dir=$(pwd)
-    eval_steps=10
     output_dir=$data_dir/CodeBERT/CodeBERT/code2nl/model
-    dev_file=$data_dir/codesummarization_data/dev/dev.jsonl
-    test_file=$data_dir/codesummarization_data/test/test.jsonl
+    dev_file=$data_dir/data/codesummarization_data/dev/dev.jsonl
+    test_file=$data_dir/data/codesummarization_data/test/test.jsonl
     test_model=$data_dir/CodeBERT/CodeBERT/code2nl/model/pytorch_model.bin
     
-    python run.py --do_eval --do_test \
+    python run.py --do_test \
     --model_type roberta \
     --model_name_or_path microsoft/codebert-base \
     --load_model_path $test_model \
@@ -103,8 +102,7 @@ which can be downloaded [here](https://drive.google.com/file/d/1pH51Ttn440keobIv
     --max_source_length $source_length \
     --max_target_length $target_length \
     --beam_size $beam_size \
-    --eval_batch_size $batch_size \
-    --eval_steps $eval_steps
+    --eval_batch_size $batch_size 
 
 # NeuralCodeSum
 
