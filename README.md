@@ -49,6 +49,7 @@ which can be downloaded [here](https://drive.google.com/file/d/1pH51Ttn440keobIv
 ### Training & Eval
     cd CodeBERT/CodeBERT/code2nl
 
+    # Parameters
     lang="java" 
     lr=5e-5
     batch_size=16
@@ -63,6 +64,7 @@ which can be downloaded [here](https://drive.google.com/file/d/1pH51Ttn440keobIv
     train_steps=10 
     pretrained_model=microsoft/codebert-base 
 
+    # Run Model
     python run.py --do_train --do_eval \
     --model_type roberta \
     --model_name_or_path $pretrained_model \
@@ -81,6 +83,7 @@ which can be downloaded [here](https://drive.google.com/file/d/1pH51Ttn440keobIv
 ### Testing
     cd CodeBERT/CodeBERT/code2nl
 
+    # Parameters
     lang="java" 
     beam_size=5
     batch_size=32
@@ -92,6 +95,7 @@ which can be downloaded [here](https://drive.google.com/file/d/1pH51Ttn440keobIv
     test_file=$data_dir/data/codesummarization_data/test/test.jsonl
     test_model=$data_dir/CodeBERT/CodeBERT/code2nl/model/pytorch_model.bin
     
+    # Run Model
     python run.py --do_test \
     --model_type roberta \
     --model_name_or_path microsoft/codebert-base \
@@ -125,10 +129,14 @@ which can be downloaded [here](https://drive.google.com/file/d/1pH51Ttn440keobIv
 
 ### NeuralCodeSum
     cd NeuralCodeSum/scripts/java
+
+    # Run Model
     bash transformer.sh 0 code2jdoc
 
 ### RNN
     cd NeuralCodeSum/scripts/java
+
+    # Run Model
     bash rnn.sh 0 rnn
 
     
